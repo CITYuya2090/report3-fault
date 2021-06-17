@@ -24,7 +24,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 100);
+        camera.position.set(0, 0, 1000);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
@@ -52,10 +52,10 @@
          mat.bumpscale = 0.5;
 
         //角すい〜円すい
-        var coneGeometry = new THREE.ConeGeometry( 25, 30, 3 ); 
+        var coneGeometry = new THREE.ConeGeometry( 250, 300, 3 ); 
         //半径、高さ、底面の分割数
         var cone = new THREE.Mesh( coneGeometry, mat );
-        cone.position.set(0, 15, -60);
+        cone.position.set(0, 150, -600);
         scene.add( cone );
 
         tick();
