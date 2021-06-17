@@ -8,7 +8,7 @@
   <!-- <script src="./three.js"></script> -->
   <!-- three.jsを読み込む(CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  
   <script src="OrbitControls.js"></script>
 
 </head>
@@ -32,8 +32,8 @@
   // カメラの初期座標を設定
   camera.position.set(0, 0, 1000);
     
-    // カメラコントローラーを作成
-  var controls = new THREE.OrbitControls(camera,document.body);
+  // カメラコントローラーを作成
+  const controls = new THREE.OrbitControls(camera,document.body);
 
 // テクスチャー読み込み
 var textureLoader = new THREE.TextureLoader();  
@@ -62,6 +62,15 @@ var textureLoader = new THREE.TextureLoader();
   directionalLight3.position.set(1, -10, 1);
   // シーンに追加
   scene.add(directionalLight3);
+    
+  tick();
+
+  // 毎フレーム時に実行されるループイベントです
+  function tick() {
+    // レンダリング
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
 
   // 初回実行
   var update = function() {
