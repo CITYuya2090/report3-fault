@@ -28,6 +28,12 @@
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
+        
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("piramid.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture; 
   
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -43,7 +49,7 @@
         // 箱を作成(原点に作成)
         var geometry = new THREE.BoxGeometry(300, 300, 300);
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(geometry, material);
+        var box = new THREE.Mesh(geometry, mat);
         scene.add(box);
 
         tick();
