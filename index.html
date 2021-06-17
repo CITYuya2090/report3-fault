@@ -46,7 +46,7 @@ var textureLoader = new THREE.TextureLoader();
   // バンプマップ読み込み
   var bump = textureLoader.load("metal_bump.png");
   mat.bumpMap = bump;
-  mat.bumpscale = 0.2;
+  mat.bumpscale = 1.0;
 
   // 平行光源
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
