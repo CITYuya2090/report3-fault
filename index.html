@@ -26,8 +26,10 @@
     // シーンを作成
     var scene = new THREE.Scene();
   
-    // カメラを作成
-  var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+  // カメラを作成
+  const camera = new THREE.PerspectiveCamera(45, width / height);
+  // カメラの初期座標を設定
+  camera.position.set(0, 0, 1000);
     
     // カメラコントローラーを作成
   const controls = new THREE.OrbitControls(camera,document.body);
