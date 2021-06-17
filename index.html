@@ -16,7 +16,7 @@
  <script>
   var init = function() {
 
-    var width = 800,
+    var width = 960,
         height = 600;
   
     // レンダラーを作成
@@ -48,27 +48,28 @@ var textureLoader = new THREE.TextureLoader();
   mat.bumpMap = bump;
   mat.bumpscale = 0.2;
 
-  // 球を作成
-  var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-  var Sphere = new THREE.Mesh(geometry2, mat);
-  Sphere.position.set(0,0,-5);
-  scene.add(Sphere);
-
   // 平行光源
   var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-  directionalLight1.position.set(1, 1, 1);
+  directionalLight1.position.set(100, 100, 100);
   // シーンに追加
   scene.add(directionalLight1);
 
   var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-  directionalLight2.position.set(-10, 1, 1);
+  directionalLight2.position.set(-100, 100, 100);
   // シーンに追加
   scene.add(directionalLight2);
 
  var directionalLight3 = new THREE.DirectionalLight(0xffffff);
-  directionalLight3.position.set(1, -10, 1);
+  directionalLight3.position.set(100, -100, 100);
   // シーンに追加
   scene.add(directionalLight3);
+    
+    
+  // 箱を作成(原点に作成)
+  var geometry = new THREE.BoxGeometry(300, 300, 300);
+  var box = new THREE.Mesh(geometry2, mat);
+  box.position.set(0,0,-5);
+  scene.add(box);
 
   tick();
 
