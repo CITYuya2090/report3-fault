@@ -68,7 +68,6 @@ var textureLoader = new THREE.TextureLoader();
   // 箱を作成(原点に作成)
   var geometry = new THREE.BoxGeometry(300, 300, 300);
   var box = new THREE.Mesh(geometry2, mat);
-  box.position.set(0,0,-5);
   scene.add(box);
 
   tick();
